@@ -1,1 +1,19 @@
 /* Write your CSS here */
+
+.hrLine {
+  height: 2px;
+  background-color: #2563eb;
+  border-style: none;
+}
+@media (max-width: 767px) {
+  .tabItem {
+    font-size: small;
+    padding: 8px;
+  }
+}
+@media (min-width: 768px) {
+  .tabItem {
+    font-size: medium;
+    padding: 15px;
+  }
+}

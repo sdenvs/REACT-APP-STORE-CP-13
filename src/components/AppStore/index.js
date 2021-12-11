@@ -1,3 +1,9 @@
+import './index.css'
+import TabItem from '../TabItem'
+import AppItem from '../AppItem'
+
+const {Component} = require('react/cjs/react.production.min')
+
 const tabsList = [
   {tabId: 'SOCIAL', displayText: 'Social'},
   {tabId: 'GAMES', displayText: 'Games'},
@@ -288,3 +294,58 @@ const appsList = [
 ]
 
 // Write your code here
+class AppStore extends Component {
+  state = {activeTab: tabsList[0].tabId, search: ''}
+
+  changeTab = tabId => {
+    this.setState({activeTab: tabId})
+  }
+
+  searchChange = event => {
+    this.setState({search: event.target.value})
+  }
+
+  render() {
+    const {activeTab, search} = this.state
+    console.log(activeTab)
+    const showApp = appsList.filter(
+      eachItem =>
+        eachItem.category === activeTab &&
+        eachItem.appName.toLowerCase().includes(search.toLowerCase()),
+    )
+    return (
+      <div className="bgContainer">
+        <h1 className="heading">App Strore</h1>
+        <div className="inputDiv">
+          <input
+            onChange={this.searchChange}
+            className="inputEl"
+            type="search"
+          />
+          <img
+            className="searchIcon"
+            alt="search icon"
+            src="https://assets.ccbp.in/frontend/react-js/app-store/app-store-search-img.png"
+          />
+        </div>
+        <ul className="tabList">
+          {tabsList.map(eachItem => (
+            <TabItem
+              isActive={activeTab === eachItem.tabId}
+              changeTabFun={this.changeTab}
+              details={eachItem}
+              key={eachItem.tabId}
+            />
+          ))}
+        </ul>
+        <ul className="appList">
+          {showApp.map(eachItem => (
+            <AppItem key={eachItem.appId} details={eachItem} />
+          ))}
+        </ul>
+      </div>
+    )
+  }
+}
+
+export default AppStore

@@ -1,1 +1,19 @@
 /* Write your CSS here */
+.appImage {
+  width: 45px;
+}
+.appItem {
+  width: 120px;
+  height: 150px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.appName {
+  text-align: center;
+}
