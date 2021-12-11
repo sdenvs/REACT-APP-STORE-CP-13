@@ -11,10 +11,10 @@ const TabItem = props => {
 
   return (
     <li onClick={changeTab} className="tabItemContainer">
-      <buuton className="button">
+      <button className="button">
         <p className="tabItem">{displayText}</p>
         <hr className={isActive ? 'hrLine' : ''} />
-      </buuton>
+      </button>
     </li>
   )
 }
