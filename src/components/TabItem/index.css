@@ -1,5 +1,9 @@
 /* Write your CSS here */
-
+.button {
+  background-color: transparent;
+  border-style: none;
+  outline: none;
+}
 .hrLine {
   height: 2px;
   background-color: #2563eb;

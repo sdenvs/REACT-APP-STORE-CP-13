@@ -315,7 +315,7 @@ class AppStore extends Component {
     )
     return (
       <div className="bgContainer">
-        <h1 className="heading">App Strore</h1>
+        <h1 className="heading">App Store</h1>
         <div className="inputDiv">
           <input
             onChange={this.searchChange}
